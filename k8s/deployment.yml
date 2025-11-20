@@ -20,3 +20,5 @@ spec:
         image: ghcr.io/vf19961226/tsmc-devops-app:latest
         ports:
         - containerPort: 8080 # 必須與 Dockerfile 中 EXPOSE 的端口一致
+      imagePullSecrets: # <--- 新增這行
+      - name: ghcr-secret # <--- 使用你剛才創建的 Secret 名稱
