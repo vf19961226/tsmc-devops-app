@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tsmc-web-app-svc
+spec:
+  selector:
+    app: tsmc-web-app # 匹配 Deployment 的 Label
+  ports:
+    - protocol: TCP
+      port: 80 # Service 暴露的端口
+      targetPort: 8080 # 容器實際運行的端口
+  type: LoadBalancer # Minikube 會為 LoadBalancer 類型分配一個 IP (可以通過 minikube service 取得)

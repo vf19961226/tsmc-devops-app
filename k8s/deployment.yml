@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tsmc-web-app
+  labels:
+    app: tsmc-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tsmc-web-app
+  template:
+    metadata:
+      labels:
+        app: tsmc-web-app
+    spec:
+      containers:
+      - name: tsmc-web-app
+        # 請將 <使用者名稱> 和 <儲存庫名稱> 替換為你的 GHCR 路徑
+        image: ghcr.io/vf19961226/tsmc-devops-app:latest
+        ports:
+        - containerPort: 8080 # 必須與 Dockerfile 中 EXPOSE 的端口一致
