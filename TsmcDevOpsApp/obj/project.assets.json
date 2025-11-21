@@ -29,6 +29,54 @@
           }
         }
       },
+      "Prometheus.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Prometheus.Client.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Prometheus.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Prometheus.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Prometheus.Client.Abstractions/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Prometheus.Client.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Prometheus.Client.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Prometheus.Client.AspNetCore/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Prometheus.Client": "6.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Prometheus.Client.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Prometheus.Client.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Swashbuckle.AspNetCore/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -194,6 +242,59 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "Prometheus.Client/6.0.0": {
+      "sha512": "4NheTn5Zv3sx9V5oPUML/ntuUZRBNHi37gaKYGqukZBjm/R/WEkWd+1TBHBdbbrweGC8yw/FOJ/nPIVDkVuR6Q==",
+      "type": "package",
+      "path": "prometheus.client/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/Prometheus.Client.dll",
+        "lib/net462/Prometheus.Client.xml",
+        "lib/net6.0/Prometheus.Client.dll",
+        "lib/net6.0/Prometheus.Client.xml",
+        "lib/netstandard2.0/Prometheus.Client.dll",
+        "lib/netstandard2.0/Prometheus.Client.xml",
+        "prometheus.client.6.0.0.nupkg.sha512",
+        "prometheus.client.nuspec"
+      ]
+    },
+    "Prometheus.Client.Abstractions/6.0.0": {
+      "sha512": "uCF//hUaHUU2MBfk6cKwezhKAIAkMr+sD44/hPRMNBneXUCx65oquz4JPGWTOJMY0YqO9heolvuXH7R0t6wi+w==",
+      "type": "package",
+      "path": "prometheus.client.abstractions/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/Prometheus.Client.Abstractions.dll",
+        "lib/net462/Prometheus.Client.Abstractions.xml",
+        "lib/net6.0/Prometheus.Client.Abstractions.dll",
+        "lib/net6.0/Prometheus.Client.Abstractions.xml",
+        "lib/netstandard2.0/Prometheus.Client.Abstractions.dll",
+        "lib/netstandard2.0/Prometheus.Client.Abstractions.xml",
+        "prometheus.client.abstractions.6.0.0.nupkg.sha512",
+        "prometheus.client.abstractions.nuspec"
+      ]
+    },
+    "Prometheus.Client.AspNetCore/6.0.0": {
+      "sha512": "G6yQ8WPVwikACoRtrJBnEhVrhJIMt6lDEqaHmsCWycVF92o10BgRchV1oiSEvekh+WZM8G2OHMBUhcH31+GoWg==",
+      "type": "package",
+      "path": "prometheus.client.aspnetcore/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/Prometheus.Client.AspNetCore.dll",
+        "lib/net8.0/Prometheus.Client.AspNetCore.xml",
+        "prometheus.client.aspnetcore.6.0.0.nupkg.sha512",
+        "prometheus.client.aspnetcore.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/10.0.1": {
       "sha512": "177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
       "type": "package",
@@ -347,6 +448,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Prometheus.Client.AspNetCore >= 6.0.0",
       "Swashbuckle.AspNetCore >= 10.0.1"
     ]
   },
@@ -399,6 +501,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Prometheus.Client.AspNetCore": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[10.0.1, )"
