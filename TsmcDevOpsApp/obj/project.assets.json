@@ -77,6 +77,25 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Prometheus.Client.MetricServer/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Prometheus.Client": "6.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Prometheus.Client.MetricServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Prometheus.Client.MetricServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Swashbuckle.AspNetCore/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -295,6 +314,21 @@
         "prometheus.client.aspnetcore.nuspec"
       ]
     },
+    "Prometheus.Client.MetricServer/7.0.0": {
+      "sha512": "ts3Hoz++A7KG11Yw9RvF16G0JGymKce+GNwL13++t/3fnhh03A/oBYYbwjHgWQUhkOM9A0wqcv4l/8Wn/1lqew==",
+      "type": "package",
+      "path": "prometheus.client.metricserver/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/Prometheus.Client.MetricServer.dll",
+        "lib/net8.0/Prometheus.Client.MetricServer.xml",
+        "prometheus.client.metricserver.7.0.0.nupkg.sha512",
+        "prometheus.client.metricserver.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/10.0.1": {
       "sha512": "177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
       "type": "package",
@@ -449,6 +483,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Prometheus.Client.AspNetCore >= 6.0.0",
+      "Prometheus.Client.MetricServer >= 7.0.0",
       "Swashbuckle.AspNetCore >= 10.0.1"
     ]
   },
@@ -504,6 +539,10 @@
           "Prometheus.Client.AspNetCore": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "Prometheus.Client.MetricServer": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
