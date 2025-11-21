@@ -1,6 +1,6 @@
 // Program.cs
 using Prometheus;
-//using Prometheus.Client.AspNetCore; // <-- 1. 新增命名空間
+using Prometheus.AspNetCore; // <-- 1. 新增命名空間
 //using Prometheus.Client.MetricServer;
 
 var builder = WebApplication.CreateBuilder(args);
