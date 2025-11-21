@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: tsmc-web-app
+      annotations: # <--- 新增 Prometheus Annotation
+          prometheus.io/scrape: "true" # 告訴 Prometheus 抓取這個 Pod
+          prometheus.io/port: "8080"  # 告訴 Prometheus 抓取這個端口
+          prometheus.io/path: "/metrics" # 告訴 Prometheus 抓取這個路徑
     spec:
       containers:
       - name: tsmc-web-app
