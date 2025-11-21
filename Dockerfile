@@ -1,6 +1,6 @@
 # --- Stage 1: Build Environment ---
 # 使用 .NET SDK 映像檔進行編譯和發布
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # 複製專案檔，並還原 NuGet 套件
@@ -14,7 +14,7 @@ RUN dotnet publish "TsmcDevOpsApp.csproj" -c Release -o /app/publish /p:UseAppHo
 
 # --- Stage 2: Final Runtime Image ---
 # 使用 .NET ASPNET 映像檔，體積更小，只包含運行所需的環境
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
 # 為了配合 K8s，將服務公開在 8080 端口 (一般是 80，但 8080 較安全且常用)
